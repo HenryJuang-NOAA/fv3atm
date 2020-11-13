@@ -570,6 +570,10 @@ module GFS_driver
     endif
 #endif
 
+#ifdef IDEA_PHYS
+    call ideaca_init( Init_parm%ak, Init_parm%bk, p_ref, Model%levs)
+#endif
+
     !--- sncovr may not exist in ICs from chgres.
     !--- FV3GFS handles this as part of the IC ingest
     !--- this note is placed here to alert users to study
